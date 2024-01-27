@@ -1,0 +1,35 @@
+{% load static %}
+
+{% block 'content' %}
+
+    <div class='flex justify-center my-16'>
+        <div class='flex w-11/12 flex-row flex-wrap justify-evenly content-evenly'>
+            <div class='my-3'>
+                {% include 'components/productcard.html' %}
+            </div>
+            <div class='my-3'>
+                {% include 'components/productcard.html' %}
+            </div>
+            <div class='my-3'>
+                {% include 'components/productcard.html' %}
+            </div>
+            <div class='my-3'>
+                {% include 'components/productcard.html' %}
+            </div>
+            <div class='my-3'>
+                {% include 'components/productcard.html' %}
+            </div>
+            <div class='my-3'>
+                {% include 'components/productcard.html' %}
+            </div>
+
+            {% comment %} {% include 'components/productcard.html' %}
+            {% include 'components/productcard.html' %}
+            {% include 'components/productcard.html' %}
+            {% include 'components/productcard.html' %}
+            {% include 'components/productcard.html' %} {% endcomment %}
+
+        </div>
+    </div>
+
+{% endblock %}
