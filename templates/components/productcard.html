@@ -2,7 +2,29 @@
 
 {% block 'content' %}
 
-<div class="card w-96 bg-base-300 shadow-xl ">
+{% for iten in content %}
+    <div class="card w-96 bg-base-300 shadow-xl my-3">
+        {% comment %} <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure> {% endcomment %}
+        <figure>
+            <img 
+                src={{ iten.url }}
+                alt={{ iten.name }} 
+                class="w-full h-60" 
+                />
+        </figure>
+
+        <div class="card-body">
+            <h2 class="card-title">{{ iten.name }}</h2>
+            <p>{{ iten.description }}</p>
+            <div class="card-actions justify-end">
+            <button class="btn btn-primary">Buy Now</button>
+            </div>
+        </div>
+    </div>
+  
+{% endfor %}
+
+{% comment %} <div class="card w-96 bg-base-300 shadow-xl ">
     <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
     <div class="card-body">
         <h2 class="card-title">Shoes!</h2>
@@ -11,6 +33,6 @@
         <button class="btn btn-primary">Buy Now</button>
         </div>
     </div>
-</div>
+</div> {% endcomment %}
 
 {% endblock %}
