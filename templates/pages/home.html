@@ -2,10 +2,36 @@
 
 {% block content %}
 
-    {% include 'components/navbar.html' %}
-    {% include 'components/hero.html' %}
-    {% include 'components/baner.html' %}
-    {% include 'components/butons.html' %}
-    {% include 'components/productSection.html' %}
-    {% include 'components/footer.html' %}
+<div id="drawer" class="drawer">
+    <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+    <div class="drawer-content">
+      <!-- Page content here --> 
+        {% include 'components/navbar.html' %}
+        {% include 'components/hero.html' %}
+        {% include 'components/baner.html' %}
+        {% include 'components/butons.html' %}
+        {% include 'components/productSection.html' %}
+        {% include 'components/footer.html' %}
+    </div>  
+    <div class="fixed z-20 drawer-side">
+      <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+      <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+        <!-- Sidebar content here -->
+        <li>
+          <a onclick="trogleDrawer()" href="#home">Home</a>
+        </li>
+        <li>
+            <a onclick="trogleDrawer()" href="#produtos">Produtos</a>
+        </li>
+        <li>
+            <a onclick="trogleDrawer()" href="#mercado">Mercado</a>
+        </li>
+        <li>
+            <a onclick="trogleDrawer()" href="#footer">Contato</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+    
 {% endblock %}

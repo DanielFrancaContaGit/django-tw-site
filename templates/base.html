@@ -1,11 +1,12 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <title>{% block head_title %} CFE Home {% endblock %} </title>
+    <script src="{% static 'js/main.js' %}"> </script>
     {% include 'head/css.html' %}
 </head>
 <body>
