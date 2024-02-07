@@ -2148,40 +2148,17 @@ html {
   position: fixed;
 }
 
-.sticky {
-  position: sticky;
-}
-
-.left-0 {
-  left: 0px;
-}
-
-.right-0 {
-  right: 0px;
-}
-
-.top-0 {
-  top: 0px;
-}
-
-.top-10 {
-  top: 2.5rem;
-}
-
 .z-10 {
   z-index: 10;
 }
 
-.z-0 {
-  z-index: 0;
-}
-
-.z-auto {
-  z-index: auto;
-}
-
 .z-20 {
   z-index: 20;
+}
+
+.mx-10 {
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
 }
 
 .my-16 {
@@ -2192,11 +2169,6 @@ html {
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
-}
-
-.mx-10 {
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
 }
 
 .mb-5 {
@@ -2255,10 +2227,6 @@ html {
   width: 100%;
 }
 
-.w-40 {
-  width: 10rem;
-}
-
 .w-max {
   width: -moz-max-content;
   width: max-content;
@@ -2300,16 +2268,8 @@ html {
   justify-content: space-between;
 }
 
-.justify-around {
-  justify-content: space-around;
-}
-
 .justify-evenly {
   justify-content: space-evenly;
-}
-
-.overscroll-auto {
-  overscroll-behavior: auto;
 }
 
 .scroll-smooth {
@@ -2388,10 +2348,4 @@ html {
 .bg-clip-text {
   -webkit-background-clip: text;
   background-clip: text;
-}
-
-@media (min-width: 768px) {
-  .md\:overscroll-contain {
-    overscroll-behavior: contain;
-  }
 }

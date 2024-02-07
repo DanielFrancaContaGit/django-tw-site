@@ -1,0 +1,21 @@
+{% load static %}
+
+{% block 'content' %}
+
+
+<form action="/" method="post">
+    {% csrf_token %}
+    <fieldset>
+        <label for="name">Nome: </label>
+        <input id="name" type="text" name="name" value="{{ name }}">
+
+        <label for="description">descrição: </label>
+        <input id="description" type="text" name="description" value="{{ description }}">
+
+        <label for="url">url: </label>
+        <input id="url" type="text" name="url" value="{{ url }}">
+    </fieldset>
+    <input type="submit" value="OK">
+</form>
+
+{% endblock %}
