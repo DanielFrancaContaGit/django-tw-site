@@ -16,7 +16,17 @@
             <h2 class="card-title">{{ iten.name }}</h2>
             <p>{{ iten.description }}</p>
             <div class="card-actions justify-end">
-            <button class="btn btn-primary">Buy Now</button>
+             <button
+                 hx-post="coxinha/"
+                 hx-trigger="click"
+                 hx-target="#produtos"
+                 hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+                 hx-vals='{"id": "{{ iten.id }}"}'
+                 class="btn bg-red-700 text-stone-950 hover:bg-red-500"
+               >
+               delete
+             </button>
+             <button class="btn btn-primary">Buy Now</button>
             </div>
         </div>
     </div>

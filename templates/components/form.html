@@ -20,16 +20,16 @@
 
       <input class="btn mb-6" type="submit" value="cadastrar">
   </form>
-  <div id="coxinha"/>
-  <button 
-    class="btn btn-ghost mb-6" 
-    hx-put="coxinha/" 
-    hx-trigger="click" 
-    hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
-    hx-target="#coxinha"
-    >
-      ver coxinha
-  </button>
+  <div id="coxinha"></div>
+      <button 
+        class="btn btn-ghost mb-4" 
+        hx-put="coxinha/" 
+        hx-trigger="click" 
+        hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+        hx-target="#coxinha"
+        >
+          ver coxinha
+      </button>
 </div>
 
 {% endblock %}

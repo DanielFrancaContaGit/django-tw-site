@@ -4,6 +4,7 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.views import View
 from django.views.decorators.csrf import csrf_protect
 from django.urls import reverse
+import json
 
 def home_view(request):
 
@@ -48,7 +49,16 @@ def homedelete(request):
          "name": "coxinha",
          "description": "coxinha de massa de batata",
      }]
+    
+    if request.method == 'POST':
+        id = request.POST['id']
 
-    return render(request, 'components/productcard.html', {
-           'produtos': produtos
-        })
+        produtos = Produtos.objects.values()
+
+        productTarget = Produtos.objects.get(id=id)
+
+        productTarget.delete()
+
+    return render(request, 'components/productSection.html', {
+        'produtos': produtos
+    })
