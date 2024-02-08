@@ -3,7 +3,7 @@
 {% block 'content' %}
 
 
-<form action="/" method="post">
+<form hx-post="/" hx-trigger="submit" hx-target="#produtos">
     {% csrf_token %}
     <fieldset>
         <label for="name">Nome: </label>
@@ -17,5 +17,9 @@
     </fieldset>
     <input type="submit" value="OK">
 </form>
+
+<div hx-put="coxinha/" hx-trigger="click" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
+    ver coxinha
+</div>
 
 {% endblock %}
