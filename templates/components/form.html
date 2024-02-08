@@ -2,24 +2,34 @@
 
 {% block 'content' %}
 
+<div class="flex flex-col justify-center items-center my-16">
 
-<form hx-post="/" hx-trigger="submit" hx-target="#produtos">
-    {% csrf_token %}
-    <fieldset>
-        <label for="name">Nome: </label>
-        <input id="name" type="text" name="name" value="{{ name }}">
+  <form hx-post="/" hx-trigger="submit" hx-target="#produtos">
+      {% csrf_token %}
+      <fieldset class="flex flex-col mb-4">
+          <h2 class="text-xl mb-4" >Adicionar novo produto</h2>
+          <label for="name">Nome: </label>
+          <input id="name" type="text" name="name" value="{{ name }}">
 
-        <label for="description">descrição: </label>
-        <input id="description" type="text" name="description" value="{{ description }}">
+          <label for="description">descrição: </label>
+          <input id="description" type="text" name="description" value="{{ description }}">
 
-        <label for="url">url: </label>
-        <input id="url" type="text" name="url" value="{{ url }}">
-    </fieldset>
-    <input type="submit" value="OK">
-</form>
+          <label for="url">url: </label>
+          <input id="url" type="text" name="url" value="{{ url }}">
+      </fieldset>
 
-<div hx-put="coxinha/" hx-trigger="click" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
-    ver coxinha
+      <input class="btn mb-6" type="submit" value="cadastrar">
+  </form>
+  <div id="coxinha"/>
+  <button 
+    class="btn btn-ghost mb-6" 
+    hx-put="coxinha/" 
+    hx-trigger="click" 
+    hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+    hx-target="#coxinha"
+    >
+      ver coxinha
+  </button>
 </div>
 
 {% endblock %}
