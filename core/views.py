@@ -1,7 +1,10 @@
 from django.contrib.auth.models import Group, User
-from rest_framework import permissions, viewsets
+from rest_framework import permissions, viewsets, status
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
-from core.serializers import GroupSerializer, UserSerializer
+from core.serializers import GroupSerializer, UserSerializer, ProdutosSerializer
+from core.models import Produtos
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -21,4 +24,13 @@ class GroupViewSet(viewsets.ModelViewSet):
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
 
+
+class ProdutosViewSet(APIView):
+
+    def get(self, request):
+        produtoList = Produtos.objects.all()
+
+        produtosListSerializer = ProdutosSerializer(produtoList, many=True)
+
+        return Response(produtosListSerializer.data, status=status.HTTP_200_OK)
 

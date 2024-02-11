@@ -28,10 +28,12 @@ router = routers.DefaultRouter()
 router.register(r'users', coreViews.UserViewSet)
 router.register(r'groups', coreViews.GroupViewSet)
 
+
 urlpatterns = [
     path('', views.home_view, name='home'),
     path('coxinha/', views.homedelete, name='coxinha'),
     path('admin/', admin.site.urls),
+    path('produtos/', coreViews.ProdutosViewSet.as_view())
 ]
 
 urlpatterns += router.urls
