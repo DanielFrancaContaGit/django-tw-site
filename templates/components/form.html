@@ -4,7 +4,7 @@
 
 <div class="flex flex-col justify-center items-center my-16">
 
-  <form hx-post="/" hx-trigger="submit" hx-target="#produtos">
+  <form hx-post="produtos/" hx-trigger="submit" hx-target="#produtos">
       {% csrf_token %}
       <fieldset class="flex flex-col mb-4">
           <h2 class="text-xl mb-4" >Adicionar novo produto</h2>
