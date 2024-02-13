@@ -19,25 +19,25 @@ from django.conf import settings
 
 from . import views
 
-from django.urls import include, path
 from rest_framework import routers
 
 from core import views as coreViews
 
 router = routers.DefaultRouter()
-router.register(r'users', coreViews.UserViewSet)
-router.register(r'groups', coreViews.GroupViewSet)
+router.register(r"users", coreViews.UserViewSet)
+router.register(r"groups", coreViews.GroupViewSet)
 
 
 urlpatterns = [
-    path('', views.home_view, name='home'),
-    path('coxinha/', views.homedelete, name='coxinha'),
-    path('admin/', admin.site.urls),
-    path('produtos/', coreViews.ProdutosViewSet.as_view())
+    path("", views.home_view, name="home"),
+    path("coxinha/", views.homedelete, name="coxinha"),
+    path("admin/", admin.site.urls),
+    path("produtos/", coreViews.ProdutosViewSet.as_view()),
 ]
 
 urlpatterns += router.urls
 
 if settings.DEBUG:
     from django.conf.urls.static import static
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) 
+
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
