@@ -9,5 +9,8 @@ module.exports = {
     require('tailwindcss'),
     require('autoprefixer'),
   ],
+  daisyui: {
+    themes: true,
+  },
 }
 
