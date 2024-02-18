@@ -24,7 +24,10 @@ def home_view(request):
     if Home.objects.values():
         home = Home.objects.values()[0]
     else:
-        home = {"title": "mude em /admin", "sub_title": "mude en /admin"}
+        home = []
+
+    # home = Home.objects.values()
+    
 
     return render(request, "pages/home.html", {"home": home, "produtos": produtos})
 

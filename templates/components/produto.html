@@ -1,0 +1,31 @@
+{% load static %}
+
+{% block 'content' %}
+    <div class="card w-96 bg-base-300 shadow-2xl my-3">
+        <figure>
+            <img 
+                src={{ url }}
+                alt={{ name }} 
+                class="w-full h-60" 
+                />
+        </figure>
+
+        <div class="card-body">
+            <h2 class="card-title">{{ name }}</h2>
+            <p>{{ description }}</p>
+            <div class="card-actions justify-end">
+             <button
+                 hx-post="coxinha/"
+                 hx-trigger="click"
+                 hx-target="#produtos"
+                 hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'
+                 hx-vals='{"id": "{{ id }}"}'
+                 class="btn bg-red-700 text-stone-950 hover:bg-red-500"
+               >
+               delete
+             </button>
+             <button class="btn btn-primary">Buy Now</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

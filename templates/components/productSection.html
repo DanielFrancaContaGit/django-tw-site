@@ -5,7 +5,13 @@
     <div id="produtos" class='flex justify-center my-16'>
         <div class='flex w-11/12 flex-row flex-wrap justify-evenly content-evenly'>
             
-            {% include 'components/productcard.html' %}
+            {% comment %} {% include 'components/productcard.html' %} {% endcomment %}
+
+            {% for iten in produtos  %}
+            
+                {% include 'components/produto.html' with url=iten.url  name=iten.name  description=iten.description  id=iten.id  %}
+
+            {% endfor %}
             
         </div>
     </div>
