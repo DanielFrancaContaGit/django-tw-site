@@ -144,8 +144,8 @@ STATICFILES_DIRS =[
 STATIC_URL = '/static/static/'
 MEDIA_URL = '/static/media/'
 
-STATIC_ROOT = BASE_DIR.parent / 'vol' / 'web'/ 'static'
-MEDIA_ROOT = BASE_DIR.parent / 'vol'/ 'web'/'media'
+STATIC_ROOT = BASE_DIR / 'vol' / 'web'/ 'static'
+MEDIA_ROOT = BASE_DIR / 'vol'/ 'web'/'media'
 
 # STATIC_ROOT = '/vol/web/static'
 # MEDIA_ROOT = '/vol/web/media'
